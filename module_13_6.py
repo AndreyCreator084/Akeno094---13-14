@@ -9,10 +9,8 @@ api = "Тут должен быть токен"
 bot = Bot(token = api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
-kb = ReplyKeyboardMarkup()
-button1 = KeyboardButton(text = 'Рассчитать', resize_keyboard = True)
-button2 = KeyboardButton(text = 'Информация', resize_keyboard = True)
-kb.add(button1, button2)
+kb = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='Рассчитать'),
+                                    KeyboardButton(text='Информация')]], resize_keyboard=True)
 
 
 Ikb = InlineKeyboardMarkup()
