@@ -7,11 +7,8 @@ import asyncio
 api = "тут находится мой ключ, а вам не покажу xD"
 bot = Bot(token = api)
 dp = Dispatcher(bot, storage=MemoryStorage())
-kb = ReplyKeyboardMarkup()
-button1 = KeyboardButton(text = 'Рассчитать', resize_keyboard = True)
-button2 = KeyboardButton(text = 'Информация', resize_keyboard = True)
-kb.add(button1)
-kb.add(button2)
+kb = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='Рассчитать'),
+                                    KeyboardButton(text='Информация')]], resize_keyboard=True)
 
 @dp.message_handler(commands=['start'])
 async def start(message):
